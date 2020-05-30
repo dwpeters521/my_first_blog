@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -119,10 +121,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+MEDIA_ROOT = os.path.join(BASE_DIR,'blog/media/')
+MEDIA_URL = '/media/'
 PROJECT_ROOT=os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
+
+CKEDITOR_BASEPATH = os.path.join(BASE_DIR,'blog/static/ckeditor/ckeditor')
+CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT,'uploads/')
+CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
+
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = "/"

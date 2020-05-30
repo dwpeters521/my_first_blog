@@ -9,11 +9,14 @@
     <!--  Bootstrap glyphicon, not included in main bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Medium Style Editor -->
+    <!-- Medium Style Editor
     <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
-    <script src="js/medium-editor.js"></script>
+    <script src="js/medium-editor.js"></script> -->
 
+    <!--CKEditor-->
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
     <!--Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
@@ -22,18 +25,19 @@
 
   </head>
   <body>
-    <div class="container">
-      <h1 class="techfont main-header">This is a Blog</h1>
-    </div>
+
 
     <!--NAVBAR-->
-    <nav class="navbar navbar-expand techfont custom-navbar">
+
+    <div class="row">
+    <div class="col">
+    <nav class="navbar navbar-expand fixed-top techfont custom-navbar nav-header">
       <div class="container d-flex align-items-baseline">
         <ul class="nav navbar-nav d-flex align-items-baseline">
           <li><a class='nav-link bigbrand' href="{% url 'post_list' %}">All Posts</a></li>
           <li><a class="nav-link" href="{% url 'about_test' %}">About</a></li>
-          <li><a class="nav-link" href="https://www.github.com">Github</a></li>
-          <li><a class="nav-link" href="https://www.linkedin.com">LinkedIn</a></li>
+          <li><a class="nav-link" href="https://www.github.com/dwpeters521">Github</a></li>
+          <li><a class="nav-link" href="https://www.linkedin.com/in/derek-peters-b0675344/">LinkedIn</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right d-flex align-items-baseline">
         {% if user.is_authenticated %}
@@ -45,16 +49,17 @@
           <li><a class="nav navbar-right" href="{% url 'login' %}"><span class='fa fa-user'></span>
           </a></li>
         {% endif %}
-        </ul>
-
+      </ul>
       </div>
-
     </nav>
+    </div>
+    </div>
+
 
     <!-- CONTENT BLOCK-->
     <div class="content container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
           <div class="blog_posts">
             {% block content %}
 

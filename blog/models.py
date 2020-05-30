@@ -7,7 +7,7 @@ from django.urls import reverse
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    text = models.CharField(max_length=20000)
     create_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True,null=True)
 
@@ -27,7 +27,7 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments')
     author = models.CharField(max_length=200)
-    text = models.TextField()
+    text = models.CharField(max_length=20000)
     create_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
 

@@ -6,11 +6,11 @@
 <div class="date postdate">
   {{post.published_date}}
   <br>
-  {{post.text}}
+  {{post.text|safe}}
 </div>
 
 {% else %}
-{{post.text}}
+{{post.text|safe}}
 <br>
 <a class='btn btn-primary' href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 {% endif %}

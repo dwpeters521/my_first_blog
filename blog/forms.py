@@ -1,5 +1,7 @@
 from django.forms import ModelForm, Textarea
 from .models import Post, Comment
+from django.contrib import admin
+from ckeditor.widgets import CKEditorWidget
 
 class PostForm(ModelForm):
 
@@ -9,7 +11,7 @@ class PostForm(ModelForm):
 
         widgets = {
             'title':Textarea(attrs={'class':'textinputclass', 'cols':40, 'rows':1}),
-            'text':Textarea(attrs={'class':'editable medium-editor-textarea postcontent'}),
+            'text':CKEditorWidget(attrs={'class':'textinputclass', 'cols':40, 'rows':1}),
         }
 
 
@@ -23,5 +25,5 @@ class CommentForm(ModelForm):
 
         widgets = {
             'author':Textarea(attrs={'class':'textinputclass','cols':40, 'rows':1}),
-            'text':Textarea(attrs={'class':'editable medium-editor-textarea'}),
+            'text':CKEditorWidget(attrs={'class':'textinputclass', 'cols':40, 'rows':1}),
         }
