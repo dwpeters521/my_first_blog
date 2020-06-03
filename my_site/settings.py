@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'my_site.urls'
@@ -126,7 +127,7 @@ MEDIA_URL = '/media/'
 PROJECT_ROOT=os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT,'static/')
+STATIC_ROOT = os.path.join(BASE_DIR,'blog/static/')
 
 CKEDITOR_BASEPATH = os.path.join(BASE_DIR,'blog/static/ckeditor/ckeditor/')
 CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT,'uploads/')
