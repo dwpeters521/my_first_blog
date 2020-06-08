@@ -127,7 +127,10 @@ MEDIA_URL = '/media/'
 PROJECT_ROOT=os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'blog/static/')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'blog/static/'),
+)
 
 CKEDITOR_BASEPATH = os.path.join(BASE_DIR,'blog/static/ckeditor/ckeditor/')
 CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT,'uploads/')
@@ -137,5 +140,5 @@ CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = "/"
 
-# Heroku support
+# Heroku Configuration
 django_heroku.settings(locals())

@@ -1,5 +1,9 @@
+body {
+  padding-top: 86px;
+}
+
 .techfont{
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', sans-serif;
   font-size: 1.5em;
   margin-bottom: 10px;
 }
@@ -61,6 +65,7 @@
 .nav-header {
   background: white;
 }
+
 
 /*COLOR CHANGER*/
 /*Credit and Source: http://codepen.io/thapliyalshivam/pen/dvgXVO*/
