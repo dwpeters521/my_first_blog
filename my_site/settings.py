@@ -131,6 +131,10 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'blog/static/'),
 )
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder'
+)
+
 
 CKEDITOR_BASEPATH = os.path.join(BASE_DIR,'blog/static/ckeditor/ckeditor/')
 CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT,'uploads/')
