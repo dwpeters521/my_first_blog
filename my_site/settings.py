@@ -25,7 +25,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'blog/templates/blog')
 SECRET_KEY = 'u6xxwb@&%c6(e7(4x!pl=7db==$=q^4@p_(*3z#win(pvq2y$3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'blog',
     'ckeditor',
@@ -128,6 +129,7 @@ PROJECT_ROOT=os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'blog/static/'),
 )
