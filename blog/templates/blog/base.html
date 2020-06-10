@@ -15,8 +15,12 @@
     <script src="js/medium-editor.js"></script> -->
 
     <!--CKEditor-->
+    {% block extrahead %}
+    {{ block.super }}
+    <script> window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
     <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
     <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+    {% endblock %}
     <!--Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 

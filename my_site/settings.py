@@ -128,7 +128,7 @@ MEDIA_URL = '/media/'
 PROJECT_ROOT=os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles/')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'blog/static/'),
@@ -137,9 +137,9 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+########### CKEditor Configuration ###########
 
-
-CKEDITOR_BASEPATH = os.path.join(BASE_DIR,'blog/static/ckeditor/ckeditor/')
+CKEDITOR_BASEPATH = os.path.join(BASE_DIR,'staticfiles/ckeditor/ckeditor')
 CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT,'uploads/')
 CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
 
